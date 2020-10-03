@@ -46,6 +46,7 @@ a:hover {
     border-radius: 15px;
     padding: 10px;
     transition-duration: 0.3s;
+    background-color: #212121;
 }
 .button:hover {
     text-decoration: none;
