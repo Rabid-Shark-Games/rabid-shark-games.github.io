@@ -63,12 +63,12 @@ a:hover {
 }
 
 .bblue {
-    color: #0012AF;
-    border: 3px solid #0012AF;
+    color: #00D3FA;
+    border: 3px solid #00D3FA;
 }
 .bblue:hover {
     color: white;
-    background-color: #0012AF;
+    background-color: #00D3FA;
     box-shadow: 0 0 5px black;
 }
 
