@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Infinite Scroller</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		section {
+			scroll-snap-type: y mandatory;
+			overflow-x: hidden;
+			width: 100vw;
+			height: 100vh;
+			overflow-y: scroll;
+		}
+		div {
+			width: 100vw;
+			height: 100vh;
+			scroll-snap-align: center;
+			scroll-snap-stop: always;
+		}
+	</style>
+</head>
+<body>
+	<section></section>
+<script>
+
+const sec = document.getElementsByTagName("section")[0]
+
+const toHex = frac => Math.min(255, Math.floor(frac * 256)).toString(16).padStart(2, 0)
+
+const addRGB = (r, g, b) => {
+	const d = document.createElement('div')
+	d.style.backgroundColor = '#' + toHex(r) + toHex(g) + toHex(b)
+	sec.appendChild(d)
+}
+
+const addColor = (c) => {
+	if (c < 0.1) addRGB(0, 1, 0)
+	else addRGB(0.5 * c, 0, 0)
+}
+
+const addR = () => addColor(Math.random())
+
+for (var i = 0; i < 1000; i++) addR()
+
+</script>
+</body>
+</html>
